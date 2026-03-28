@@ -3,7 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Krusty Krab | Modern Fast Food</title>
+  <title>The Krusty Krab | Premium Fast Food Experience</title>
+  <meta name="description" content="Experience the legendary Krabby Patty reimagined with premium ingredients. Visit The Krusty Krab for the finest underwater dining.">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Krusty Krab | Premium Fast Food">
+  <meta property="og:description" content="Bite into perfection with our legendary Krabby Patty and premium menu items.">
+  <meta property="og:image" content="https://mrkrabsoc.github.io/mr-krabs-site/assets/krabby-patty.webp">
+  <meta property="og:url" content="https://mrkrabsoc.github.io/mr-krabs-site/">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Krusty Krab | Premium Fast Food">
+  <meta name="twitter:description" content="Experience the legendary Krabby Patty reimagined with premium ingredients.">
+  <meta name="twitter:image" content="https://mrkrabsoc.github.io/mr-krabs-site/assets/krabby-patty.webp">
+  
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -13,39 +28,60 @@
     <div class="logo">
       <h1>THE KRUSTY KRAB</h1>
     </div>
-    <nav>
+    <nav class="desktop-nav">
       <ul>
         <li><a href="#menu">Our Menu</a></li>
         <li><a href="#locations">Locations</a></li>
         <li><a href="#about">About Us</a></li>
       </ul>
     </nav>
-    <a href="#order" class="btn-primary">Order Now</a>
+    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <a href="#order" class="btn-primary" onclick="openOrderModal(event)">Order Now</a>
   </header>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-nav">
+    <ul>
+      <li><a href="#menu" onclick="closeMobileMenu()">Our Menu</a></li>
+      <li><a href="#locations" onclick="closeMobileMenu()">Locations</a></li>
+      <li><a href="#about" onclick="closeMobileMenu()">About Us</a></li>
+      <li><a href="#order" onclick="openOrderModal(event); closeMobileMenu()">Order Now</a></li>
+    </ul>
+  </nav>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
-    <div class="hero-content">
+    <div class="hero-content fade-in">
       <h2>Bite into Perfection</h2>
       <p>Experience the legendary Krabby Patty reimagined with premium ingredients and unmatched flavor.</p>
       <a href="#menu" class="btn-primary large">View Menu</a>
     </div>
-    <div class="hero-image">
-      <img src="assets/krabby-patty.png" alt="The Legendary Krabby Patty">
+    <div class="hero-image fade-in">
+      <picture>
+        <source srcset="assets/krabby-patty.webp" type="image/webp">
+        <img src="assets/krabby-patty.png" alt="The Legendary Krabby Patty" loading="lazy">
+      </picture>
     </div>
   </section>
 
   <!-- Menu Section -->
   <section class="menu-section" id="menu">
-    <div class="section-title">
+    <div class="section-title fade-in">
       <h2>Featured Menu</h2>
       <p>Discover our world-famous classics.</p>
     </div>
     <div class="menu-grid">
       <!-- Item 1 -->
-      <div class="menu-card">
+      <div class="menu-card fade-in">
         <div class="card-img">
-          <img src="assets/krabby-patty.png" alt="Krabby Patty">
+          <picture>
+            <source srcset="assets/krabby-patty.webp" type="image/webp">
+            <img src="assets/krabby-patty.png" alt="Krabby Patty" loading="lazy">
+          </picture>
         </div>
         <div class="card-content">
           <h3>The Classic Krabby Patty</h3>
@@ -53,10 +89,14 @@
           <span class="price">$4.99</span>
         </div>
       </div>
+      
       <!-- Item 2 -->
-      <div class="menu-card">
+      <div class="menu-card fade-in">
         <div class="card-img">
-          <img src="assets/kelp-fries.png" alt="Kelp Fries">
+          <picture>
+            <source srcset="assets/kelp-fries.webp" type="image/webp">
+            <img src="assets/kelp-fries.png" alt="Kelp Fries" loading="lazy">
+          </picture>
         </div>
         <div class="card-content">
           <h3>Golden Kelp Fries</h3>
@@ -64,20 +104,105 @@
           <span class="price">$2.49</span>
         </div>
       </div>
+      
+      <!-- Item 3 - New -->
+      <div class="menu-card fade-in">
+        <div class="card-img">
+          <div class="placeholder-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+        </div>
+        <div class="card-content">
+          <h3>Coral Bits Combo</h3>
+          <p>Bite-sized crispy coral bits served with our signature kelp dipping sauce. A true Bikini Bottom delicacy.</p>
+          <span class="price">$3.99</span>
+        </div>
+      </div>
+      
+      <!-- Item 4 - New -->
+      <div class="menu-card fade-in">
+        <div class="card-img">
+          <div class="placeholder-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+        </div>
+        <div class="card-content">
+          <h3>Ocean Shake</h3>
+          <p>Creamy, refreshing shake available in Seaweed Vanilla, Coral Berry, and Plankton Chocolate flavors.</p>
+          <span class="price">$3.49</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section - New -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="section-title fade-in">
+      <h2>What Our Customers Say</h2>
+      <p>Rated #1 underwater dining experience</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p>"The Krabby Patty is absolutely legendary! I swim here every week and it never disappoints."</p>
+        <span class="customer">- Patrick S.</span>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p>"Finally, a fast food place that cares about quality. The kelp fries are perfection!"</p>
+        <span class="customer">- Sandy C.</span>
+      </div>
+      <div class="testimonial-card fade-in">
+        <div class="stars">★★★★★</div>
+        <p>"Best burger in Bikini Bottom, hands down. The secret formula really makes a difference."</p>
+        <span class="customer">- Squidward T.</span>
+      </div>
     </div>
   </section>
 
   <!-- Location/About Section -->
   <section class="location-section" id="locations">
-    <div class="location-content">
+    <div class="location-content fade-in">
       <h2>Experience The Krusty Krab</h2>
       <p>Visit our flagship location in Bikini Bottom. We've redesigned our restaurant to provide a sleek, modern, and comfortable dining experience for you and your family.</p>
-      <a href="#locations" class="btn-secondary">Find a Location</a>
+      <a href="#" class="btn-secondary" onclick="openOrderModal(event)">Find a Location</a>
     </div>
-    <div class="location-image">
-      <img src="assets/restaurant.png" alt="The Modern Krusty Krab Restaurant">
+    <div class="location-image fade-in">
+      <picture>
+        <source srcset="assets/restaurant.webp" type="image/webp">
+        <img src="assets/restaurant.png" alt="The Modern Krusty Krab Restaurant" loading="lazy">
+      </picture>
     </div>
   </section>
+
+  <!-- Order Modal -->
+  <div id="orderModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeOrderModal()">&times;</span>
+      <h2>Order Your Krabby Patty</h2>
+      <form id="orderForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
+          <label for="item">Select Item</label>
+          <select id="item" name="item" required>
+            <option value="">Choose an item...</option>
+            <option value="krabby-patty">Classic Krabby Patty - $4.99</option>
+            <option value="kelp-fries">Golden Kelp Fries - $2.49</option>
+            <option value="coral-bits">Coral Bits Combo - $3.99</option>
+            <option value="ocean-shake">Ocean Shake - $3.49</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="notes">Special Instructions</label>
+          <textarea id="notes" name="notes" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn-primary full-width">Place Order</button>
+      </form>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
