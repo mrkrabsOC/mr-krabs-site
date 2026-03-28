@@ -351,10 +351,54 @@ img {
   color: var(--primary);
 }
 
+/* About Section */
+.about-section {
+  padding: 5rem 5%;
+  background-color: var(--light-bg);
+}
+
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat h3 {
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.stat p {
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
 /* Testimonials Section */
 .testimonials-section {
   padding: 5rem 5%;
-  background-color: var(--light-bg);
+  background-color: var(--white);
 }
 
 .testimonials-grid {
@@ -535,36 +579,64 @@ footer {
 }
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
   margin-bottom: 3rem;
-  flex-wrap: wrap;
-  gap: 2rem;
 }
 
-.footer-logo h2 {
+.footer-section h2 {
   color: var(--secondary);
   font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
-.footer-logo p {
+.footer-section h3 {
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.footer-section p {
   color: #aaa;
+  line-height: 1.8;
+  font-size: 0.95rem;
 }
 
-.footer-links ul {
+.footer-section ul {
   list-style: none;
-  display: flex;
-  gap: 2rem;
 }
 
-.footer-links ul li a {
+.footer-section ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
   color: #ccc;
   transition: var(--transition);
+  font-size: 0.95rem;
 }
 
-.footer-links ul li a:hover {
+.footer-section ul li a:hover {
   color: var(--white);
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+  transition: var(--transition);
+  opacity: 0.8;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  transform: translateY(-3px);
 }
 
 .footer-bottom {

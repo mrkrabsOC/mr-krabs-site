@@ -19,6 +19,12 @@
   <meta name="twitter:description" content="Experience the legendary Krabby Patty reimagined with premium ingredients.">
   <meta name="twitter:image" content="https://mrkrabsoc.github.io/mr-krabs-site/assets/krabby-patty.webp">
   
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -108,7 +114,10 @@
       <!-- Item 3 - New -->
       <div class="menu-card fade-in">
         <div class="card-img">
-          <div class="placeholder-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <picture>
+            <source srcset="assets/coral-bits.webp" type="image/webp">
+            <img src="assets/coral-bits.png" alt="Coral Bits Combo" loading="lazy">
+          </picture>
         </div>
         <div class="card-content">
           <h3>Coral Bits Combo</h3>
@@ -120,7 +129,10 @@
       <!-- Item 4 - New -->
       <div class="menu-card fade-in">
         <div class="card-img">
-          <div class="placeholder-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <picture>
+            <source srcset="assets/ocean-shake.webp" type="image/webp">
+            <img src="assets/ocean-shake.png" alt="Ocean Shake" loading="lazy">
+          </picture>
         </div>
         <div class="card-content">
           <h3>Ocean Shake</h3>
@@ -156,12 +168,40 @@
     </div>
   </section>
 
-  <!-- Location/About Section -->
+  <!-- About Section -->
+  <section class="about-section" id="about">
+    <div class="section-title fade-in">
+      <h2>Our Story</h2>
+      <p>The legend behind Bikini Bottom's finest</p>
+    </div>
+    <div class="about-content fade-in">
+      <p>Since 1999, The Krusty Krab has been serving the most delicious burgers under the sea. Our secret formula Krabby Patty has become a cultural icon, beloved by creatures from all seven seas.</p>
+      <p>What started as a humble fast-food restaurant has evolved into a premium dining experience, combining our legendary flavors with modern culinary techniques and a sleek, contemporary atmosphere.</p>
+      <div class="about-stats">
+        <div class="stat">
+          <h3>25+</h3>
+          <p>Years of Excellence</p>
+        </div>
+        <div class="stat">
+          <h3>10M+</h3>
+          <p>Patties Served</p>
+        </div>
+        <div class="stat">
+          <h3>#1</h3>
+          <p>Rated Restaurant</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location/Contact Section -->
   <section class="location-section" id="locations">
     <div class="location-content fade-in">
-      <h2>Experience The Krusty Krab</h2>
-      <p>Visit our flagship location in Bikini Bottom. We've redesigned our restaurant to provide a sleek, modern, and comfortable dining experience for you and your family.</p>
-      <a href="#" class="btn-secondary" onclick="openOrderModal(event)">Find a Location</a>
+      <h2>Visit Us Today</h2>
+      <p><strong>Address:</strong><br>831 Bottom Feeder Lane<br>Bikini Bottom, Pacific Ocean 00001</p>
+      <p><strong>Hours:</strong><br>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+      <p><strong>Contact:</strong><br>Phone: (555) KRAB-123<br>Email: order@krustykrab.sea</p>
+      <a href="#" class="btn-secondary" onclick="openOrderModal(event)">Order Now</a>
     </div>
     <div class="location-image fade-in">
       <picture>
@@ -207,16 +247,37 @@
   <!-- Footer -->
   <footer>
     <div class="footer-content">
-      <div class="footer-logo">
+      <div class="footer-section">
         <h2>THE KRUSTY KRAB</h2>
         <p>Finest food under the sea.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Facebook">👤</a>
+        </div>
       </div>
-      <div class="footer-links">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#locations">Locations</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#" onclick="openOrderModal(event)">Order Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Company</h3>
         <ul>
           <li><a href="#">Careers</a></li>
           <li><a href="#">Contact Us</a></li>
           <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
         </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>831 Bottom Feeder Lane<br>Bikini Bottom, PO 00001</p>
+        <p>Phone: (555) KRAB-123<br>Email: order@krustykrab.sea</p>
       </div>
     </div>
     <div class="footer-bottom">
